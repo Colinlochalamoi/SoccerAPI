@@ -20,5 +20,5 @@ end
           end
 
   Player.create!([{ first_name: Faker::Sports::Football.player, last_name: Faker::Name.last_name, number: rand(0..35),
-                    position: Faker::Sports::Football.position, hieght: rand(152..185), dominant_foot: @foot, age: rand(18..35), nationality: Faker::Nation.nationality, Team_id: rand(1..50) }])
+                    position: Faker::Sports::Football.position, hieght: rand(152..185), dominant_foot: @foot, age: rand(18..35), nationality: Faker::Nation.nationality, team_id: rand(1..50) }])
 end
