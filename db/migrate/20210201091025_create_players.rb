@@ -11,7 +11,7 @@ class CreatePlayers < ActiveRecord::Migration[6.0]
       t.string :dominant_foot
       t.integer :age
       t.string :nationality
-      t.belongs_to :Team, null: false, foreign_key: true
+      t.belongs_to :team, null: false, foreign_key: true
 
       t.timestamps
     end
