@@ -12,6 +12,7 @@ module Types
     field :age, Integer, null: true
     field :nationality, String, null: true
     field :team_id, Integer, null: true
+    field :team, TeamType, null: true
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
   end

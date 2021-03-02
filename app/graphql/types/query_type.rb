@@ -10,21 +10,22 @@ module Types
     field :teams, [TeamType], null: false, description: 'All Teams'
 
     field :player, PlayerType, null: false, description: 'Single Player' do
-      argument :id, ID, required: true
+      # changed ID to int, returns a string {id => 1}
+      argument :id, Integer, required: true
     end
 
     field :team, TeamType, null: false, description: 'Single Team' do
-      argument :id, ID, required: true
+      argument :id, Integer, required: true
     end
 
     def player(id)
-      Player.find(id)
+      Player.find(id[:id])
     rescue ActiveRecord::RecordNotFound => e
       GraphQL::ExecutionError.new("Invalid input: #{e.message}")
     end
 
     def team(id)
-      Team.find(id)
+      Team.find(id[:id])
     rescue ActiveRecord::RecordNotFound => e
       GraphQL::ExecutionError.new("Invalid input: #{e.message}")
     end
